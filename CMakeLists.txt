@@ -16,12 +16,19 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
 add_executable(advent-of-code-2019
   main.cpp
-  day-1/day-1.cpp
-  day-1/day-1.h
-  utils/file-utils.h
-  utils/file-utils.cpp
+  day-1/day-1.h day-1/day-1.cpp
+  utils/file-utils.cpp utils/file-utils.h
+  day-2/day-2.h day-2/day-2.cpp
+  utils/intcodeparser.h utils/intcodeparser.cpp
+  utils/opcodes/opcode.h
+  utils/opcodes/add-opcode.h utils/opcodes/add-opcode.cpp
+  utils/opcodes/opcode-service.h utils/opcodes/opcode-service.cpp
+  utils/opcodes/halt-opcode.h utils/opcodes/halt-opcode.cpp
+  utils/opcodes/mul-opcode.h utils/opcodes/mul-opcode.cpp
 )
 target_link_libraries(advent-of-code-2019 Qt${QT_VERSION_MAJOR}::Core)
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/day-1/input.txt
      DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/day-1)
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/day-2/input.txt
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/day-2)

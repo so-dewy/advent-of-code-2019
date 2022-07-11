@@ -5,4 +5,6 @@
 #include <vector>
 std::vector<int> read_input_numbers(std::string filePath);
 
+std::vector<int> read_intcode(std::string filePath);
+
 #endif // FILEUTILS_H
