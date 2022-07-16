@@ -1,5 +1,6 @@
-#ifndef DAY2_H
-#define DAY2_H
+#pragma once
+
 void day2_1();
 
-#endif // DAY2_H
+void day2_2();
+

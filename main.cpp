@@ -4,6 +4,6 @@
 
 int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
-    day2_1();
+    day2_2();
 //    return a.exec();
 }

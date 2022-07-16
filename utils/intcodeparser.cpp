@@ -21,7 +21,6 @@ std::vector<int>& IntCodeParser::execute_intcode(std::vector<int>& intcode) {
         if (shouldHalt == OpCode::HaltExecution::Yes) {
             break;
         }
-        std::cout << std::endl;
     }
     return intcode;
 }
