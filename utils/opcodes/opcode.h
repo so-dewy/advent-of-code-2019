@@ -5,9 +5,14 @@
 
 class OpCode
 {
-public:
+public:    
+    enum class HaltExecution {
+        Yes,
+        No
+    };
     virtual ~OpCode() {}
-    virtual void execute(std::vector<int>& execution_env, int current_position) = 0;
+    virtual HaltExecution execute(std::vector<int>& execution_env, int& current_position) = 0;
+
 };
 
 #endif // OPCODE_H

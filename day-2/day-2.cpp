@@ -8,5 +8,10 @@ void day2_1() {
 
     IntCodeParser parser;
 
+    intcode[1] = 12;
+    intcode[2] = 2;
+
     parser.execute_intcode(intcode);
+
+    std::cout << intcode.at(0) << std::endl;
 }

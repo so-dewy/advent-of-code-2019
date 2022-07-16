@@ -12,7 +12,7 @@ public:
 private:
     void execute_opcode(std::vector<int>& execution_env, int opcode);
 
-    OpCode& get_opcode(std::vector<int>& intcode);
+    OpCode* get_opcode(std::vector<int>& intcode);
 };
 
 #endif // INTCODEPARSER_H

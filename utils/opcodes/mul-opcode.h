@@ -8,7 +8,7 @@ class MulOpCode : public OpCode
 public:
     MulOpCode();
     virtual ~MulOpCode() {}
-    virtual void execute(std::vector<int>& execution_env, int current_position);
+    virtual HaltExecution execute(std::vector<int>& execution_env, int& current_position);
 };
 
 #endif // MULOPCODE_H
