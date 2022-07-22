@@ -1,5 +1,4 @@
-#ifndef ADDOPCODE_H
-#define ADDOPCODE_H
+#pragma once
 
 #include "opcode.h"
 
@@ -8,7 +7,5 @@ class AddOpCode : public OpCode
 public:
     AddOpCode();
     virtual ~AddOpCode() {}
-    virtual HaltExecution execute(std::vector<int>& execution_env, int& current_position);
+    virtual HaltExecution execute(std::shared_ptr<std::vector<int>> execution_env, int& current_position);
 };
-
-#endif // ADDOPCODE_H

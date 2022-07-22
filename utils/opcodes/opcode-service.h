@@ -1,5 +1,4 @@
-#ifndef OPCODESERVICE_H
-#define OPCODESERVICE_H
+#pragma once
 
 #include "utils/opcodes/add-opcode.h"
 #include "utils/opcodes/mul-opcode.h"
@@ -15,5 +14,3 @@ public:
 
     OpCode* get_opcode_by_int(int int_opcode);
 };
-
-#endif // OPCODESERVICE_H

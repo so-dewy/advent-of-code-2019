@@ -1,6 +1,6 @@
-#ifndef OPCODE_H
-#define OPCODE_H
+#pragma once
 
+#include <memory>
 #include <vector>
 
 class OpCode
@@ -11,8 +11,6 @@ public:
         No
     };
     virtual ~OpCode() {}
-    virtual HaltExecution execute(std::vector<int>& execution_env, int& current_position) = 0;
+    virtual HaltExecution execute(std::shared_ptr<std::vector<int>>, int& current_position) = 0;
 
 };
-
-#endif // OPCODE_H

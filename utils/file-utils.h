@@ -1,10 +1,9 @@
-#ifndef FILEUTILS_H
-#define FILEUTILS_H
+#pragma once
 
+#include <memory>
 #include <string>
 #include <vector>
+
 std::vector<int> read_input_numbers(std::string filePath);
 
-std::vector<int> read_intcode(std::string filePath);
-
-#endif // FILEUTILS_H
+std::shared_ptr<std::vector<int>> read_intcode(std::string filePath);

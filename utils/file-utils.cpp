@@ -1,6 +1,7 @@
 #include "file-utils.h"
 #include <iostream>
 #include <fstream>
+#include <memory>
 
 std::vector<std::string> split(const std::string &str, const std::string &delimeter) {
     std::vector<std::string> result;
@@ -37,8 +38,8 @@ std::vector<int> read_input_numbers(std::string filePath) {
     return numbers;
 }
 
-std::vector<int> read_intcode(std::string filePath) {
-    std::vector<int> opcodes;
+std::shared_ptr<std::vector<int>> read_intcode(std::string filePath) {
+    std::shared_ptr<std::vector<int>> opcodes = std::make_shared<std::vector<int>>();
     std::ifstream infile(filePath);
     std::string line;
 
@@ -47,7 +48,7 @@ std::vector<int> read_intcode(std::string filePath) {
             auto vec = split(line, ",");
             for (const auto &str : vec) {
                 auto opcode = std::stoi(str);
-                opcodes.push_back(opcode);
+                opcodes.get()->push_back(opcode);
             }
         }
         infile.close();

@@ -1,5 +1,4 @@
-#ifndef MULOPCODE_H
-#define MULOPCODE_H
+#pragma once
 
 #include "opcode.h"
 
@@ -8,7 +7,5 @@ class MulOpCode : public OpCode
 public:
     MulOpCode();
     virtual ~MulOpCode() {}
-    virtual HaltExecution execute(std::vector<int>& execution_env, int& current_position);
+    virtual HaltExecution execute(std::shared_ptr<std::vector<int>> execution_env, int& current_position);
 };
-
-#endif // MULOPCODE_H

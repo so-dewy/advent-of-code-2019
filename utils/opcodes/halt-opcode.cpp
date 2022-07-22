@@ -6,6 +6,6 @@ HaltOpCode::HaltOpCode()
 
 }
 
-OpCode::HaltExecution HaltOpCode::execute(std::vector<int>& execution_env, int& current_position) {
+OpCode::HaltExecution HaltOpCode::execute(std::shared_ptr<std::vector<int>> execution_env, int& current_position) {
     return OpCode::HaltExecution::Yes;
 }

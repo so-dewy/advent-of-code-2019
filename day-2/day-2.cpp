@@ -2,18 +2,17 @@
 #include "utils/intcodeparser.h"
 #include <iostream>
 
-
 void day2_1() {
-    auto intcode = read_intcode("./day-2/input.txt");
+    auto intcode_ptr = read_intcode("./day-2/input.txt");
 
     IntCodeParser parser;
 
-    intcode[1] = 12;
-    intcode[2] = 2;
+    (*intcode_ptr.get())[1] = 12;
+    (*intcode_ptr.get())[2] = 2;
 
-    parser.execute_intcode(intcode);
+    parser.execute_intcode(intcode_ptr);
 
-    std::cout << intcode.at(0) << std::endl;
+    std::cout << intcode_ptr.get()->at(0) << std::endl;
 }
 
 void day2_2() {
@@ -23,15 +22,15 @@ void day2_2() {
 
             IntCodeParser parser;
 
-            intcode[1] = i;
-            intcode[2] = j;
+            (*intcode.get())[1] = i;
+            (*intcode.get())[2] = j;
 
             parser.execute_intcode(intcode);
 
-            if (intcode.at(0) == 19690720) {
-                std::cout << intcode.at(0) << std::endl;
+            if (intcode.get()->at(0) == 19690720) {
+                std::cout << intcode.get()->at(0) << std::endl;
 
-                for (const auto it: intcode) {
+                for (const auto it: (*intcode.get())) {
                     std::cout << it << ", ";
                 }
                 std::cout << std::endl;
