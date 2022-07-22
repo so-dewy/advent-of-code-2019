@@ -2,17 +2,12 @@
 #include "utils/intcodeparser.h"
 #include <iostream>
 
+using std::vector;
+
 void day3_1() {
-    read_intcode("./day-2/input.txt");
-    std::shared_ptr<std::vector<int>> intcode_ptr = read_intcode("./day-2/input.txt");
-    auto intcode = *intcode_ptr.get();
+    auto wires = read_wires("./day-3/input.txt");
 
-    IntCodeParser parser;
+    vector<vector<int>> matrix(100, vector<int>(100));
 
-    intcode[1] = 12;
-    intcode[2] = 2;
-
-    parser.execute_intcode(intcode_ptr);
-
-    std::cout << intcode.at(0) << std::endl;
+    std::cout << wires.get()->at(0) << std::endl;
 }
