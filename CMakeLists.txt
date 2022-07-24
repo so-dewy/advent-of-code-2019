@@ -21,6 +21,7 @@ add_executable(advent-of-code-2019
   utils/file-utils.cpp utils/file-utils.h
   day-2/day-2.h day-2/day-2.cpp
   day-3/day-3.h day-3/day-3.cpp
+  day-4/day-4.h day-4/day-4.cpp
   utils/intcodeparser.h utils/intcodeparser.cpp
   utils/opcodes/opcode.h
   utils/opcodes/add-opcode.h utils/opcodes/add-opcode.cpp
