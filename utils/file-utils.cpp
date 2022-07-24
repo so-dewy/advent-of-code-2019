@@ -3,26 +3,31 @@
 #include <fstream>
 #include <memory>
 
-std::unique_ptr<std::vector<std::string>> split(const std::string &str, const std::string &delimeter) {
-    std::unique_ptr<std::vector<std::string>> result = std::make_unique<std::vector<std::string>>();
+using std::unique_ptr;
+using std::vector;
+using std::string;
+using std::shared_ptr;
+
+unique_ptr<vector<string>> split(const string &str, const string &delimeter) {
+    unique_ptr<vector<string>> result = std::make_unique<vector<string>>();
 
     size_t found = str.find(delimeter);
     size_t startIndex = 0;
 
-    while(found != std::string::npos) {
-        result.get()->push_back(std::string(str.begin()+startIndex, str.begin()+found));
+    while(found != string::npos) {
+        result.get()->push_back(string(str.begin()+startIndex, str.begin()+found));
         startIndex = found + delimeter.size();
         found = str.find(delimeter, startIndex);
     }
     if(startIndex != str.size())
-        result.get()->push_back(std::string(str.begin()+startIndex, str.end()));
+        result.get()->push_back(string(str.begin()+startIndex, str.end()));
     return std::move(result);
 }
 
-std::vector<int> read_input_numbers(std::string filePath) {
-    std::vector<int> numbers;
+vector<int> read_input_numbers(string filePath) {
+    vector<int> numbers;
     std::ifstream infile(filePath);
-    std::string line;
+    string line;
 
     if (infile.is_open()) {
         while (getline(infile, line)) {
@@ -38,10 +43,10 @@ std::vector<int> read_input_numbers(std::string filePath) {
     return numbers;
 }
 
-std::shared_ptr<std::vector<int>> read_intcode(std::string filePath) {
-    std::shared_ptr<std::vector<int>> opcodes = std::make_shared<std::vector<int>>();
+shared_ptr<vector<int>> read_intcode(string filePath) {
+    shared_ptr<vector<int>> opcodes = std::make_shared<vector<int>>();
     std::ifstream infile(filePath);
-    std::string line;
+    string line;
 
     if (infile.is_open()) {
         while (getline(infile, line)) {
@@ -60,12 +65,12 @@ std::shared_ptr<std::vector<int>> read_intcode(std::string filePath) {
     return opcodes;
 }
 
-std::unique_ptr<std::vector<std::unique_ptr<std::vector<std::string>>>> read_wires(std::string filePath) {
-    std::unique_ptr<std::vector<std::unique_ptr<std::vector<std::string>>>> wires =
-            std::make_unique<std::vector<std::unique_ptr<std::vector<std::string>>>>();
+unique_ptr<vector<unique_ptr<vector<string>>>> read_wires(string filePath) {
+    unique_ptr<vector<unique_ptr<vector<string>>>> wires =
+            std::make_unique<vector<unique_ptr<vector<string>>>>();
 
     std::ifstream infile(filePath);
-    std::string line;
+    string line;
 
     if (infile.is_open()) {
         while (getline(infile, line)) {
@@ -78,5 +83,5 @@ std::unique_ptr<std::vector<std::unique_ptr<std::vector<std::string>>>> read_wir
         std::cout << "Unable to open file" << std::endl;
     }
 
-    return wires;
+    return std::move(wires);
 }
