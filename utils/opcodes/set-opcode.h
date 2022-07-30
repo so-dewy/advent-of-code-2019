@@ -2,10 +2,10 @@
 
 #include "opcode.h"
 
-class HaltOpCode : public OpCode
+class SetOpCode : public OpCode
 {
 public:
-    HaltOpCode();
-    virtual ~HaltOpCode() {}
+    SetOpCode();
+    virtual ~SetOpCode() {}
     virtual HaltExecution execute(std::shared_ptr<std::vector<int>> execution_env, std::vector<int>& param_modes, int& current_position);
 };

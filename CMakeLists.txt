@@ -22,12 +22,15 @@ add_executable(advent-of-code-2019
   day-2/day-2.h day-2/day-2.cpp
   day-3/day-3.h day-3/day-3.cpp
   day-4/day-4.h day-4/day-4.cpp
+  day-5/day-5.h day-5/day-5.cpp
   utils/intcodeparser.h utils/intcodeparser.cpp
   utils/opcodes/opcode.h
   utils/opcodes/add-opcode.h utils/opcodes/add-opcode.cpp
   utils/opcodes/opcode-service.h utils/opcodes/opcode-service.cpp
   utils/opcodes/halt-opcode.h utils/opcodes/halt-opcode.cpp
   utils/opcodes/mul-opcode.h utils/opcodes/mul-opcode.cpp
+  utils/opcodes/out-opcode.h utils/opcodes/out-opcode.cpp
+  utils/opcodes/set-opcode.h utils/opcodes/set-opcode.cpp
 )
 target_link_libraries(advent-of-code-2019 Qt${QT_VERSION_MAJOR}::Core)
 
@@ -37,3 +40,5 @@ file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/day-2/input.txt
      DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/day-2)
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/day-3/input.txt
      DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/day-3)
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/day-5/input.txt
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/day-5)

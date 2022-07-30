@@ -11,6 +11,6 @@ public:
         No
     };
     virtual ~OpCode() {}
-    virtual HaltExecution execute(std::shared_ptr<std::vector<int>>, int& current_position) = 0;
+    virtual HaltExecution execute(std::shared_ptr<std::vector<int>>, std::vector<int>& param_modes, int& current_position) = 0;
 
 };
