@@ -8,6 +8,6 @@
 
 int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
-    day5_1();
+    day5_2();
 //    return a.exec();
 }
